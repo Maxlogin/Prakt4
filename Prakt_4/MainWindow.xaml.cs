@@ -24,5 +24,31 @@ namespace Prakt_4
         {
             InitializeComponent();
         }
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            int month = int.Parse(txtNumber1.Text);
+            int dni;
+            switch(month)
+            {
+                case 2://fevral
+                    dni = 28;
+                    break;
+                case 4: //aprel
+                case 6://june
+                case 9://september
+                case 11://November
+                    dni = 30;
+                    break;
+                default://ost month
+                    dni = 31;
+                    break;
+            }
+            
+            lblResult.Content = $"В месяце {month}, дней={dni}";
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
